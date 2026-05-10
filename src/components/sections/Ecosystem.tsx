@@ -11,8 +11,8 @@ const STATS = [
 
 export function Ecosystem() {
   return (
-    <section id="ecosystem" className="relative py-40 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section id="ecosystem" className="relative py-40 px-8 sm:px-12">
+      <div className="max-w-2xl mx-auto">
 
         {/* Section header */}
         <motion.div
@@ -41,13 +41,13 @@ export function Ecosystem() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="py-10 flex items-start justify-between gap-8"
+            className="py-14 flex items-start justify-between gap-10"
           >
             <div className="flex items-start gap-8 flex-1 min-w-0">
               <span className="text-[10px] font-mono text-white/20 tracking-[0.2em] mt-0.5 shrink-0">01</span>
               <div>
                 <h3 className="text-base font-semibold text-white/60 mb-2">Resources</h3>
-                <p className="text-sm text-white/25 leading-relaxed max-w-sm">
+                <p className="text-sm text-white/25 leading-relaxed">
                   Workbooks, templates and thinking frameworks for structured work.
                 </p>
               </div>
@@ -64,18 +64,18 @@ export function Ecosystem() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.06, duration: 0.5 }}
-            className="py-10 flex items-start justify-between gap-8"
+            className="py-14 flex items-start justify-between gap-10"
           >
             <div className="flex items-start gap-8 flex-1 min-w-0">
               <span className="text-[10px] font-mono text-white/10 tracking-[0.2em] mt-0.5 shrink-0">02</span>
               <div>
                 <h3 className="text-base font-semibold text-white/25 mb-2">Advisory</h3>
-                <p className="text-sm text-white/15 leading-relaxed max-w-sm">
+                <p className="text-sm text-white/15 leading-relaxed">
                   Strategic support for builders and early-stage projects.
                 </p>
               </div>
             </div>
-            <span className="text-[10px] font-mono text-white/12 tracking-[0.15em] uppercase mt-0.5 shrink-0">
+            <span className="text-[10px] font-mono text-white/15 tracking-[0.15em] uppercase mt-0.5 shrink-0">
               Soon
             </span>
           </motion.div>
@@ -87,14 +87,14 @@ export function Ecosystem() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.12, duration: 0.5 }}
-            className="pt-10"
+            className="pt-14"
           >
-            <div className="flex items-start justify-between gap-8 mb-20">
+            <div className="flex items-start justify-between gap-10 mb-24">
               <div className="flex items-start gap-8 flex-1 min-w-0">
                 <span className="text-[10px] font-mono text-white/20 tracking-[0.2em] mt-0.5 shrink-0">03</span>
                 <div>
                   <h3 className="text-base font-semibold text-white mb-2">The Lab</h3>
-                  <p className="text-sm text-white/40 leading-relaxed max-w-sm">
+                  <p className="text-sm text-white/40 leading-relaxed">
                     Digital products designed around real problems.
                   </p>
                 </div>
@@ -111,10 +111,10 @@ export function Ecosystem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.18, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="sm:pl-16 pb-16"
+              className="pb-20"
             >
               {/* First product label */}
-              <div className="flex items-center gap-5 mb-14">
+              <div className="flex items-center gap-5 mb-16">
                 <div className="h-px w-8" style={{ background: 'rgba(255,255,255,0.08)' }} />
                 <span className="text-[9px] font-mono text-white/15 tracking-[0.2em] uppercase">
                   First product
@@ -122,7 +122,7 @@ export function Ecosystem() {
               </div>
 
               {/* Live */}
-              <div className="flex items-center gap-2 mb-5">
+              <div className="flex items-center gap-2 mb-6">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="text-[9px] font-mono text-emerald-400/60 uppercase tracking-[0.15em]">
                   Live
@@ -130,21 +130,21 @@ export function Ecosystem() {
               </div>
 
               {/* Product name */}
-              <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-5">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
                 Woodle Career
               </h2>
 
               {/* Description */}
-              <p className="text-sm text-white/35 leading-relaxed max-w-lg mb-14">
+              <p className="text-sm text-white/35 leading-relaxed mb-16">
                 A complete job search management SaaS. Kanban pipeline, automated follow-ups,
                 personalized daily brief and statistical insights.
               </p>
 
               {/* Stats — flat, no boxes */}
-              <div className="flex flex-wrap gap-x-10 gap-y-5 mb-14">
+              <div className="flex flex-wrap gap-x-12 gap-y-6 mb-16">
                 {STATS.map(stat => (
                   <div key={stat.label}>
-                    <p className="text-xl font-bold text-white mb-0.5">{stat.value}</p>
+                    <p className="text-xl font-bold text-white mb-1">{stat.value}</p>
                     <p className="text-[10px] font-mono text-white/25 tracking-wide">{stat.label}</p>
                   </div>
                 ))}
@@ -173,7 +173,7 @@ export function Ecosystem() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="text-[10px] font-mono text-white/15 tracking-[0.15em] mt-10 uppercase"
+          className="text-[10px] font-mono text-white/15 tracking-[0.15em] mt-12 uppercase"
         >
           More products are being built in the Lab.
         </motion.p>
