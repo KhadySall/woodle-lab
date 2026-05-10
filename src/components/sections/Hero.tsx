@@ -6,9 +6,6 @@ import { AnimatedText } from '@/components/ui/AnimatedText'
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col">
-      {/* Dot grid */}
-      <div className="dot-grid absolute inset-0 opacity-[0.06] pointer-events-none" />
-
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
@@ -16,20 +13,20 @@ export function Hero() {
       />
 
       {/* Navbar */}
-      <nav className="relative z-10 flex items-center justify-between px-6 sm:px-10 py-6 max-w-6xl mx-auto w-full">
+      <nav className="relative z-10 flex items-center justify-between px-6 sm:px-10 py-6 max-w-5xl mx-auto w-full">
         <div className="flex items-center gap-2.5">
           <div
-            className="h-7 w-7 rounded-lg shrink-0"
+            className="h-6 w-6 rounded-lg shrink-0"
             style={{ background: 'linear-gradient(135deg, #22d3ee, #6366f1, #8b5cf6, #ec4899)' }}
           />
           <span className="text-white font-semibold tracking-tight text-sm">
-            woodle<span className="gradient-text">lab</span>
+            woodle<span className="text-white/50">lab</span>
           </span>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-[10px] text-white/25 font-mono tracking-widest uppercase hidden sm:block">
-            v0.1 · in progress
+          <span className="text-[10px] text-white/20 font-mono tracking-widest uppercase hidden sm:block">
+            v0.1 · Public Preview
           </span>
           <div className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
         </div>
@@ -48,13 +45,13 @@ export function Hero() {
           <span
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] font-mono tracking-[0.18em] uppercase"
             style={{
-              background: 'rgba(139,92,246,0.08)',
-              border: '1px solid rgba(139,92,246,0.22)',
-              color: '#a78bfa',
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(255,255,255,0.08)',
+              color: 'rgba(255,255,255,0.4)',
             }}
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />
-            Lab in progress
+            <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
+            Public Preview
           </span>
         </motion.div>
 
@@ -85,10 +82,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.6 }}
-          className="text-base text-white/40 max-w-lg leading-relaxed mb-10"
+          className="text-base text-white/35 max-w-lg leading-relaxed mb-10"
         >
-          Un studio créatif et technologique qui développe des outils intelligents,
-          des ressources digitales et des accompagnements stratégiques.
+          A creative and technology studio building intelligent tools,
+          digital resources and strategic support.
         </motion.p>
 
         {/* CTAs */}
@@ -102,18 +99,17 @@ export function Hero() {
             href="https://career.woodlelab.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90 active:scale-95"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-80 active:scale-95"
             style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
           >
-            Découvrir Woodle Career
+            Explore Woodle Career
             <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
           </a>
           <a
             href="#ecosystem"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium text-white/50 hover:text-white transition-colors"
-            style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium text-white/35 hover:text-white/60 transition-colors"
           >
-            En savoir plus
+            Learn more
           </a>
         </motion.div>
       </div>
@@ -130,8 +126,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-            className="h-5 w-px"
-            style={{ background: 'linear-gradient(to bottom, rgba(139,92,246,0.4), transparent)' }}
+            className="h-5 w-px bg-white/10"
           />
         </div>
       </motion.div>
