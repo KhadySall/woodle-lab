@@ -7,16 +7,11 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col">
       {/* Dot grid */}
-      <div className="dot-grid absolute inset-0 opacity-[0.04] pointer-events-none" />
-
-      {/* Top glow */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] blur-[130px] opacity-15 pointer-events-none"
-        style={{ background: 'linear-gradient(135deg, #22d3ee, #6366f1, #8b5cf6)' }}
-      />
+      <div className="dot-grid absolute inset-0 opacity-[0.06] pointer-events-none" />
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+      <div
+        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
         style={{ background: 'linear-gradient(to top, #06060F, transparent)' }}
       />
 
@@ -108,7 +103,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90 active:scale-95"
-            style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899)' }}
+            style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
           >
             Découvrir Woodle Career
             <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
