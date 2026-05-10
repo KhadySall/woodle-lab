@@ -2,39 +2,9 @@
 
 import { motion } from 'framer-motion'
 
-const POLES = [
-  {
-    icon: '📚',
-    label: 'Ressources',
-    desc: 'Workbooks, templates, frameworks et outils d\'organisation pour structurer vos idées et vos projets.',
-    items: ['Business Plan Workbook', 'Business Model Workbook', 'Brain Design Workbook'],
-    statusLabel: 'Disponible',
-    statusColor: '#6366f1',
-    highlight: false,
-  },
-  {
-    icon: '🧭',
-    label: 'Accompagnement',
-    desc: 'Accompagnements personnalisés pour entrepreneurs, créateurs et porteurs de projets qui veulent aller plus loin.',
-    items: ['Structuration de projet', 'Stratégie produit', 'Vision & roadmap'],
-    statusLabel: 'Bientôt',
-    statusColor: '#8b5cf6',
-    highlight: false,
-  },
-  {
-    icon: '⚗️',
-    label: 'Le Lab',
-    desc: 'Le cœur de Woodle Lab. Un laboratoire qui crée des applications intelligentes, modernes et centrées sur de vrais besoins.',
-    items: ['Woodle Career — live', 'Nouveaux produits en cours', 'Expérimentations actives'],
-    statusLabel: 'Actif',
-    statusColor: '#ec4899',
-    highlight: true,
-  },
-]
-
 export function Ecosystem() {
   return (
-    <section id="ecosystem" className="relative py-28 px-6">
+    <section id="ecosystem" className="relative py-32 px-6">
       <div className="max-w-5xl mx-auto">
 
         {/* Section header */}
@@ -43,77 +13,155 @@ export function Ecosystem() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="mb-20"
         >
-          <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/25 mb-4">
+          <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/20 mb-3">
             L&apos;écosystème
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Trois pôles,{' '}
             <span className="gradient-text">une vision</span>
           </h2>
-          <p className="text-white/35 max-w-sm mx-auto text-sm leading-relaxed">
-            Woodle Lab n&apos;est pas une agence. C&apos;est un studio-laboratoire qui construit,
-            accompagne et crée des outils utiles.
-          </p>
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {POLES.map((pole, i) => (
-            <motion.div
-              key={pole.label}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="relative rounded-2xl p-6"
-              style={{
-                background: pole.highlight
-                  ? 'linear-gradient(#0E0E1C, #0E0E1C) padding-box, linear-gradient(135deg, #22d3ee, #6366f1, #8b5cf6, #ec4899) border-box'
-                  : 'linear-gradient(#0E0E1C, #0E0E1C) padding-box, linear-gradient(135deg, rgba(99,102,241,0.25), rgba(139,92,246,0.25)) border-box',
-                border: '1px solid transparent',
-              }}
-            >
-              {/* Top shimmer for highlighted card */}
-              {pole.highlight && (
-                <div
-                  className="absolute top-0 left-8 right-8 h-px rounded-full"
-                  style={{ background: 'linear-gradient(90deg, transparent, rgba(139,92,246,0.7), transparent)' }}
-                />
-              )}
+        {/* Row 1 : Ressources + Accompagnement */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
 
-              <div className="flex items-start justify-between mb-5">
-                <span className="text-2xl">{pole.icon}</span>
-                <span
-                  className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full tracking-[0.15em] uppercase"
-                  style={{
-                    background: `${pole.statusColor}15`,
-                    color: pole.statusColor,
-                    border: `1px solid ${pole.statusColor}28`,
-                  }}
-                >
-                  {pole.statusLabel}
+          {/* 01 — Ressources */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-2xl p-7"
+            style={{
+              border: '1px solid rgba(255,255,255,0.06)',
+              background: 'rgba(255,255,255,0.015)',
+            }}
+          >
+            <div className="flex items-center justify-between mb-8">
+              <span className="text-[10px] font-mono text-white/15 tracking-[0.2em]">01</span>
+              <span className="flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.15em] text-white/25">
+                <span className="h-1.5 w-1.5 rounded-full bg-indigo-400/50" />
+                Disponible
+              </span>
+            </div>
+            <h3 className="text-sm font-semibold text-white/60 mb-2">Ressources</h3>
+            <p className="text-xs text-white/25 leading-relaxed mb-5">
+              Workbooks, templates et frameworks pour structurer vos idées et vos projets.
+            </p>
+            <ul className="space-y-1.5">
+              {['Business Plan Workbook', 'Business Model Workbook', 'Brain Design Workbook'].map(item => (
+                <li key={item} className="text-[10px] text-white/15 font-mono">— {item}</li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* 02 — Accompagnement */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08, duration: 0.6 }}
+            className="rounded-2xl p-7"
+            style={{
+              border: '1px solid rgba(255,255,255,0.04)',
+              background: 'rgba(255,255,255,0.01)',
+            }}
+          >
+            <div className="flex items-center justify-between mb-8">
+              <span className="text-[10px] font-mono text-white/10 tracking-[0.2em]">02</span>
+              <span className="flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.15em] text-white/20">
+                <span className="h-1.5 w-1.5 rounded-full bg-white/15" />
+                Bientôt
+              </span>
+            </div>
+            <h3 className="text-sm font-semibold text-white/35 mb-2">Accompagnement</h3>
+            <p className="text-xs text-white/20 leading-relaxed mb-5">
+              Accompagnements personnalisés pour entrepreneurs, créateurs et porteurs de projets.
+            </p>
+            <ul className="space-y-1.5">
+              {['Structuration de projet', 'Stratégie produit', 'Vision & roadmap'].map(item => (
+                <li key={item} className="text-[10px] text-white/10 font-mono">— {item}</li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* Row 2 : Le Lab — dominant */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.12, duration: 0.7 }}
+          className="relative rounded-2xl overflow-hidden"
+          style={{
+            border: '1px solid rgba(139,92,246,0.2)',
+            background: 'rgba(139,92,246,0.04)',
+          }}
+        >
+          {/* Shimmer top */}
+          <div
+            className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+            style={{
+              background: 'linear-gradient(90deg, transparent 10%, rgba(139,92,246,0.5) 50%, transparent 90%)',
+            }}
+          />
+
+          <div className="p-8 sm:p-10 sm:flex sm:items-end sm:justify-between gap-12">
+
+            {/* Left — headline + description */}
+            <div>
+              <div className="flex items-center gap-5 mb-8">
+                <span className="text-[10px] font-mono text-white/15 tracking-[0.2em]">03</span>
+                <span className="flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.15em] text-violet-300/80">
+                  <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />
+                  Actif
                 </span>
               </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">Le Lab</h3>
+              <p className="text-sm text-white/35 leading-relaxed max-w-md">
+                Le cœur de Woodle Lab. Un laboratoire qui crée des applications
+                intelligentes, modernes et centrées sur de vrais besoins.
+              </p>
+            </div>
 
-              <h3 className="text-base font-bold text-white mb-2">{pole.label}</h3>
-              <p className="text-xs text-white/35 leading-relaxed mb-5">{pole.desc}</p>
+            {/* Right — activity list */}
+            <div className="mt-8 sm:mt-0 flex flex-col gap-2 sm:min-w-[220px]">
+              <div
+                className="flex items-center gap-3 px-4 py-2.5 rounded-xl"
+                style={{
+                  background: 'rgba(139,92,246,0.08)',
+                  border: '1px solid rgba(139,92,246,0.15)',
+                }}
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-violet-400 shrink-0" />
+                <span className="text-xs font-mono text-white/50">Woodle Career — live</span>
+              </div>
+              <div
+                className="flex items-center gap-3 px-4 py-2.5 rounded-xl"
+                style={{
+                  background: 'transparent',
+                  border: '1px solid rgba(255,255,255,0.05)',
+                }}
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-white/10 shrink-0" />
+                <span className="text-xs font-mono text-white/20">Nouveaux produits en cours</span>
+              </div>
+              <div
+                className="flex items-center gap-3 px-4 py-2.5 rounded-xl"
+                style={{
+                  background: 'transparent',
+                  border: '1px solid rgba(255,255,255,0.05)',
+                }}
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-white/10 shrink-0" />
+                <span className="text-xs font-mono text-white/20">Expérimentations actives</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
-              <ul className="space-y-2">
-                {pole.items.map(item => (
-                  <li key={item} className="flex items-center gap-2.5 text-xs text-white/25">
-                    <span
-                      className="h-px w-3 shrink-0 rounded-full"
-                      style={{ background: pole.statusColor }}
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   )
