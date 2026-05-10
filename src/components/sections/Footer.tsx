@@ -28,9 +28,9 @@ export function Footer() {
 
           {/* Narrative */}
           <p className="text-sm text-white/20 leading-relaxed max-w-sm mb-16">
-            This is a temporary public window. The Lab&apos;s systems,
-            products and infrastructure are actively being built.
-            This space will expand as the work progresses.
+            Woodle Lab is operational. The products are real and being shipped.
+            This website is a temporary public window —
+            the full version is on its way.
           </p>
 
           {/* Bottom row */}
