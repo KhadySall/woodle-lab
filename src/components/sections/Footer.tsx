@@ -4,42 +4,48 @@ import { motion } from 'framer-motion'
 
 export function Footer() {
   return (
-    <footer className="relative py-14 px-6">
+    <footer className="relative py-24 px-6">
       {/* Top separator */}
-      <div
-        className="absolute top-0 left-10 right-10 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(139,92,246,0.25), transparent)' }}
-      />
+      <div className="h-px mb-16" style={{ background: 'rgba(255,255,255,0.05)' }} />
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-5"
+          transition={{ duration: 0.7 }}
         >
           {/* Logo */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 mb-10">
             <div
-              className="h-6 w-6 rounded-lg shrink-0"
-              style={{ background: 'linear-gradient(135deg, #22d3ee, #8b5cf6, #ec4899)' }}
+              className="h-5 w-5 rounded-md shrink-0"
+              style={{ background: 'linear-gradient(135deg, #22d3ee, #6366f1, #8b5cf6, #ec4899)' }}
             />
-            <span className="text-white/50 font-semibold tracking-tight text-sm">
-              woodle<span className="gradient-text">lab</span>
+            <span className="text-white/40 font-semibold tracking-tight text-sm">
+              woodlelab
             </span>
           </div>
 
-          {/* Build status */}
-          <div className="flex items-center gap-2 text-[10px] font-mono text-white/20">
-            <div className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
-            Site en construction — woodlelab.com
-          </div>
-
-          {/* Copyright */}
-          <p className="text-white/20 text-[10px] font-mono">
-            © {new Date().getFullYear()} Woodle Lab
+          {/* Narrative */}
+          <p className="text-sm text-white/20 leading-relaxed max-w-sm mb-16">
+            This website is a temporary public window —
+            the full version is on its way.
           </p>
+
+          {/* Bottom row */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <a
+              href="https://career.woodlelab.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] font-mono text-white/20 hover:text-white/40 transition-colors tracking-wide"
+            >
+              career.woodlelab.com
+            </a>
+            <p className="text-[10px] font-mono text-white/15">
+              © {new Date().getFullYear()} Woodle Lab
+            </p>
+          </div>
         </motion.div>
       </div>
     </footer>

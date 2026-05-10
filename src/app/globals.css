@@ -24,8 +24,3 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-.dot-grid {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
-  background-size: 36px 36px;
-}
