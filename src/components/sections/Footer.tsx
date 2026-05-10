@@ -28,7 +28,6 @@ export function Footer() {
 
           {/* Narrative */}
           <p className="text-sm text-white/20 leading-relaxed max-w-sm mb-16">
-            Woodle Lab is operational. The products are real and being shipped.
             This website is a temporary public window —
             the full version is on its way.
           </p>
