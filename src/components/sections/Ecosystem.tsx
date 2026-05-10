@@ -2,6 +2,13 @@
 
 import { motion } from 'framer-motion'
 
+const STATS = [
+  { value: '11', label: 'statuts Kanban' },
+  { value: '20+', label: 'fonctionnalités' },
+  { value: '14j', label: 'essai gratuit' },
+  { value: '4,99€', label: 'par mois Pro' },
+]
+
 export function Ecosystem() {
   return (
     <section id="ecosystem" className="relative py-32 px-6">
@@ -88,7 +95,7 @@ export function Ecosystem() {
           </motion.div>
         </div>
 
-        {/* Row 2 : Le Lab — dominant */}
+        {/* Row 2 : Le Lab + Woodle Career — un seul conteneur */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,71 +103,99 @@ export function Ecosystem() {
           transition={{ delay: 0.12, duration: 0.7 }}
           className="relative rounded-2xl overflow-hidden"
           style={{
-            border: '1px solid rgba(139,92,246,0.2)',
-            background: 'rgba(139,92,246,0.04)',
+            background: 'linear-gradient(#0D0D1E, #0D0D1E) padding-box, linear-gradient(135deg, #22d3ee, #6366f1, #8b5cf6, #ec4899) border-box',
+            border: '1px solid transparent',
           }}
         >
-          {/* Shimmer top */}
-          <div
-            className="absolute top-0 left-0 right-0 h-px pointer-events-none"
-            style={{
-              background: 'linear-gradient(90deg, transparent 10%, rgba(139,92,246,0.5) 50%, transparent 90%)',
-            }}
-          />
-
-          <div className="p-8 sm:p-10 sm:flex sm:items-end sm:justify-between gap-12">
-
-            {/* Left — headline + description */}
-            <div>
-              <div className="flex items-center gap-5 mb-8">
-                <span className="text-[10px] font-mono text-white/15 tracking-[0.2em]">03</span>
-                <span className="flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.15em] text-violet-300/80">
-                  <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />
-                  Actif
-                </span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">Le Lab</h3>
-              <p className="text-sm text-white/35 leading-relaxed max-w-md">
-                Le cœur de Woodle Lab. Un laboratoire qui crée des applications
-                intelligentes, modernes et centrées sur de vrais besoins.
-              </p>
+          {/* 03 — Le Lab */}
+          <div className="p-8 sm:p-10 pb-8">
+            <div className="flex items-center gap-5 mb-8">
+              <span className="text-[10px] font-mono text-white/15 tracking-[0.2em]">03</span>
+              <span className="flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.15em] text-violet-300/80">
+                <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />
+                Actif
+              </span>
             </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">Le Lab</h3>
+            <p className="text-sm text-white/35 leading-relaxed max-w-xl">
+              Le cœur de Woodle Lab. Un laboratoire qui crée des applications intelligentes,
+              modernes et centrées sur de vrais besoins.
+            </p>
+          </div>
 
-            {/* Right — activity list */}
-            <div className="mt-8 sm:mt-0 flex flex-col gap-2 sm:min-w-[220px]">
-              <div
-                className="flex items-center gap-3 px-4 py-2.5 rounded-xl"
-                style={{
-                  background: 'rgba(139,92,246,0.08)',
-                  border: '1px solid rgba(139,92,246,0.15)',
-                }}
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-violet-400 shrink-0" />
-                <span className="text-xs font-mono text-white/50">Woodle Career — live</span>
-              </div>
-              <div
-                className="flex items-center gap-3 px-4 py-2.5 rounded-xl"
-                style={{
-                  background: 'transparent',
-                  border: '1px solid rgba(255,255,255,0.05)',
-                }}
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-white/10 shrink-0" />
-                <span className="text-xs font-mono text-white/20">Nouveaux produits en cours</span>
-              </div>
-              <div
-                className="flex items-center gap-3 px-4 py-2.5 rounded-xl"
-                style={{
-                  background: 'transparent',
-                  border: '1px solid rgba(255,255,255,0.05)',
-                }}
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-white/10 shrink-0" />
-                <span className="text-xs font-mono text-white/20">Expérimentations actives</span>
-              </div>
+          {/* Divider — Premier produit */}
+          <div className="px-8 sm:px-10">
+            <div className="flex items-center gap-4">
+              <div className="h-px flex-1" style={{ background: 'rgba(255,255,255,0.06)' }} />
+              <span className="text-[9px] font-mono text-white/20 tracking-[0.2em] uppercase whitespace-nowrap">
+                Premier produit
+              </span>
+              <div className="h-px flex-1" style={{ background: 'rgba(255,255,255,0.06)' }} />
             </div>
           </div>
+
+          {/* Woodle Career */}
+          <div className="p-8 sm:p-10 pt-8">
+
+            {/* Live badge */}
+            <div className="flex items-center gap-2 mb-6">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span
+                className="text-[9px] font-mono uppercase tracking-[0.15em]"
+                style={{ color: '#4ade80' }}
+              >
+                Live
+              </span>
+            </div>
+
+            {/* Product name */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+              Woodle Career
+            </h2>
+
+            {/* Description */}
+            <p className="text-sm text-white/40 leading-relaxed max-w-xl mb-10">
+              Un SaaS complet de gestion de recherche d&apos;emploi. Pipeline Kanban,
+              relances automatiques, Daily Brief personnalisé et insights statistiques.
+            </p>
+
+            {/* Separator */}
+            <div className="h-px mb-8" style={{ background: 'rgba(255,255,255,0.05)' }} />
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-10">
+              {STATS.map(stat => (
+                <div key={stat.label}>
+                  <p className="text-2xl font-bold text-white mb-1">{stat.value}</p>
+                  <p className="text-[10px] font-mono text-white/25 tracking-wide">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <a
+              href="https://career.woodlelab.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90 active:scale-95"
+              style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
+            >
+              Accéder à Woodle Career
+              <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
+            </a>
+          </div>
         </motion.div>
+
+        {/* Coming next */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-center text-[10px] font-mono text-white/15 tracking-[0.15em] mt-6 uppercase"
+        >
+          D&apos;autres produits sont en cours dans le Lab
+        </motion.p>
 
       </div>
     </section>
